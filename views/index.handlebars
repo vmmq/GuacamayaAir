@@ -1,0 +1,46 @@
+<img style="width:300px" src="/assets/images/guacamaya.png" alt="burger">
+
+<h1>Seleccione el avion para cada ruta!</h1>
+
+<div id="list1">
+    <h2>Vuelo sin avion...</h2>
+	<ol>
+		{{#each vuelos}}
+    		{{#unless this.assigned}}
+      			<li>
+        			{{this.vuelo_code}}
+        			<form action="/{{this.id}}?_method=PUT" method="POST">
+        				<input type="hidden" name="assigned" value="true">
+						<button type="submit" id="agregar_avion">Agregar Avion!</button>
+                        <input type="text" name="Avion_name" id="customer-field" placeholder="Avion">
+        			</form>
+        		</li>
+        	{{/unless}}
+        {{/each}}
+	</ol>
+</div>
+
+<div id="list2">
+    <h2>Vuelos con avion...</h2>
+	<ol>
+		{{#each vuelos}}
+    		{{#if this.assigned}}
+      			<li>
+        			{{this.vuelo_code}} (asignado a {{this.Avion.Avion_name}})
+					<form action="/{{this.id}}?_method=DELETE" method="POST">
+        				<button type="text" >Eliminar</button>
+        			</form>
+        		</li>
+        	{{/if}}
+        {{/each}}
+	</ol>
+</div>
+
+<div id="form-area">
+    <form id="add-burger-form" action="/" method="POST">
+        <input type="text" id="burger-name" name="name">
+        <button type="submit" id="burger-submit">Submit</button>
+    </form>
+    
+</div>
+

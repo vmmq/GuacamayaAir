@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "guacamaya",
+    "password": "guacamaya18",
+    "database": "guacamaya",
+    "host": "mysql.eventco.re",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "guacamaya",
+    "password": "guacamaya18",
+    "database": "guacamaya",
+    "host": "mysql.eventco.re",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "guacamaya",
+    "password": "guacamaya18",
+    "database": "guacamaya",
+    "host": "mysql.eventco.re",
+    "dialect": "mysql"
+  }
+}
